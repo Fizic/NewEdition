@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Рандомные Новости</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">NewRedaction</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/../">Главная</a>
+        <a class="p-2 text-dark" href="">Новости</a>
+    </nav>
+    <a class="btn btn-outline-primary" href="https://github.com/Fizic/NewEdition">Проект на GitHub</a>
+</div>
+
+
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+          {% for info  in all_info %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+              <img src="{{info.img}}" alt="hi" width="348px" height="100%">
+            <div class="card-body">
+              <b><p class="card-text">{{info.title}}</p></b>
+                  <p class="card-text">{{info.description}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
